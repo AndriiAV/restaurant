@@ -11,7 +11,7 @@
 
 <c:if test="${not empty sessionScope.currentUser}">
     <div class="current-user">
-        Hello, ${sessionScope.currentUser.userName}
+        <h1>Hello, ${sessionScope.currentUser.userName}</h1>
     </div>
     <form action="/logout" method="post">
         <button class="logout">Logout</button>
@@ -20,7 +20,7 @@
 
 <c:if test="${not empty param.error}">
     <div>
-        ERROR: ${param.error}
+        <h2>ERROR: ${param.error}</h2>
     </div>
 </c:if>
 

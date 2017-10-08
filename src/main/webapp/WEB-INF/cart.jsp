@@ -11,7 +11,7 @@
 
 <c:if test="${not empty sessionScope.currentUser}">
     <div class="current-user">
-        Hello, ${sessionScope.currentUser.userName}
+        <h1>Hello, ${sessionScope.currentUser.userName}</h1>
     </div>
     <form action="/logout" method="post">
         <button class="logout">Logout</button>
@@ -52,6 +52,7 @@
     </c:otherwise>
 </c:choose>
 
-<div><a href="/menu">Go to menu</a></div>
+<div><a href="/menu"><button type="submit">Go to menu</button></a></div>
+
 </body>
 </html>

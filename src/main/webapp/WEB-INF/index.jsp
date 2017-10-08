@@ -26,43 +26,15 @@
 </form>
 
 <h1><fmt:message key="title.hello"/></h1>
-<h3><fmt:message key="title.loginEnter"/></h3>
+<h3><fmt:message key="title.choice"/></h3>
 
-<form method="post" action="/menu" name="user">
-    <div class="container">
-        <label><b><fmt:message key="title.login"/></b></label>
-        <input type="text" placeholder="<fmt:message key="title.loginForm"/>" name="login" required>
-        <label><b><fmt:message key="title.password"/></b></label>
-        <input type="password" placeholder="<fmt:message key="title.passwordEnter"/>" name="psw" required>
-        <button type="submit"><fmt:message key="title.submit"/></button>
-    </div>
-</form>
-
-<br>
-<h3><fmt:message key="title.registrationEnter"/></h3>
-<form action="/menu" name="newUser">
-    <div class="container">
-        <label><b><fmt:message key="title.login"/></b></label>
-        <input type="text" placeholder="<fmt:message key="title.loginForm"/>" name="login" required>
-
-        <label><b><fmt:message key="title.userName"/></b></label>
-        <input type="text" placeholder="<fmt:message key="title.userNameEnter"/>" name="user_name" required>
-
-        <label><b><fmt:message key="title.phoneNumber"/></b></label>
-        <input type="text" placeholder="<fmt:message key="title.phoneNumberEnter"/>" name="phone number" required>
-
-        <label><b><fmt:message key="title.address"/></b></label>
-        <input type="text" placeholder="<fmt:message key="title.addressEnter"/>" name="address" required>
-
-        <label><b><fmt:message key="title.password"/></b></label>
-        <input type="password" placeholder="<fmt:message key="title.passwordEnter"/>" name="psw" required>
-
-        <div class="clearfix">
-            <button type="button" class="cancelbtn"><fmt:message key="title.cancel"/></button>
-            <button type="submit" class="signupbtn"><fmt:message key="title.registration"/></button>
-        </div>
-    </div>
-</form>
+<div>
+    <table>
+        <tr><button onclick="window.location.href = '/login'"><fmt:message key="index.user"/></button></tr>
+        <tr><button onclick="window.location.href = '/registration'"><fmt:message key="index.register"/></button></tr>
+        <tr><button onclick="window.location.href = '/admin/login'"><fmt:message key="index.admin"/></button></tr>
+    </table>
+</div>
 
 </body>
 </html>

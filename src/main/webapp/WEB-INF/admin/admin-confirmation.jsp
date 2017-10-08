@@ -11,7 +11,7 @@
 
 <c:if test="${not empty sessionScope.currentAdmin}">
     <div class="current-user">
-        Hello, ${sessionScope.currentAdmin.login}
+        <h1>Hello, ${sessionScope.currentAdmin.login}</h1>
     </div>
     <form action="/admin/logout" method="post">
         <button class="logout">Logout</button>

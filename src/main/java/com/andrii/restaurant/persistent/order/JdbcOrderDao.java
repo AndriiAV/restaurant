@@ -4,6 +4,7 @@ import com.andrii.restaurant.model.Order;
 import com.andrii.restaurant.persistent.NotFoundPersistenceException;
 import com.andrii.restaurant.persistent.RestaurantPersistenceException;
 import com.andrii.restaurant.persistent.order.OrderDao;
+import org.apache.log4j.Logger;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -17,6 +18,7 @@ public class JdbcOrderDao implements OrderDao {
     private static final String SQL_UPDATE = "UPDATE orders SET user_id = ?, date = ?, amount = ?, confirmed = ? WHERE order_id = ?";
     private static final String SQL_FIND_BY_CONFIRMED = "SELECT * FROM orders WHERE confirmed = ?";
     private final DataSource dataSource;
+    private final static Logger logger = Logger.getLogger(JdbcOrderDao.class);
 
     public JdbcOrderDao(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -110,11 +112,8 @@ public class JdbcOrderDao implements OrderDao {
         while (resultSet.next()) {
             orders.add(createOrder(resultSet));
         }
+        logger.info("Order created");
         return orders;
     }
 
-//    private java.sql.Date toSqlDate(LocalDateTime localDateTime) {
-//        Date javaDate = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-//        return new java.sql.Date(javaDate.getTime());
-//    }
 }

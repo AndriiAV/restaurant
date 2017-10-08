@@ -27,7 +27,7 @@
 
 <c:if test="${illegalCredentialsError}">
     <div class="error">
-        <fmt:message key="title.loginIllegalCredentialsError"/>
+        <h2><fmt:message key="title.loginIllegalCredentialsError"/></h2>
     </div>
 </c:if>
 
@@ -46,7 +46,11 @@
 
 <br>
 
-<div><a href="/registration">Registration</a></div>
+<div  class="container">
+<h3><fmt:message key="title.registrationButton"/></h3>
+<a href="/registration"><button type="submit"><fmt:message key="title.registration"/></button></a>
+</div>
+
 
 </body>
 </html>

@@ -55,6 +55,11 @@ h1 {
     color: coral;
 }
 
+h2 {
+    color: red;
+    border: double;
+}
+
 h3 {
     color: #4CAF50;
 }
