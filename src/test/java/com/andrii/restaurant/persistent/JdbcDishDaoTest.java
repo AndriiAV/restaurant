@@ -1,17 +1,17 @@
 package com.andrii.restaurant.persistent;
 
 import com.andrii.restaurant.model.Dish;
-import com.andrii.restaurant.model.Menu;
+import com.andrii.restaurant.persistent.dish.DishDao;
+import com.andrii.restaurant.persistent.dish.JdbcDishDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.junit.Test;
 
 import javax.sql.DataSource;
-
 import java.math.BigDecimal;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class JdbcDishDaoTest {
 

@@ -1,6 +1,7 @@
 package com.andrii.restaurant.model;
 
 public class Admin {
+
     private Long id;
     private String login;
     private String password;
@@ -33,14 +34,6 @@ public class Admin {
     }
 
     @Override
-    public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -56,5 +49,13 @@ public class Admin {
         int result = login != null ? login.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                '}';
     }
 }

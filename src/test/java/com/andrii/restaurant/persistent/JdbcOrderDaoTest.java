@@ -1,13 +1,14 @@
 package com.andrii.restaurant.persistent;
 
 import com.andrii.restaurant.model.Order;
+import com.andrii.restaurant.persistent.order.JdbcOrderDao;
+import com.andrii.restaurant.persistent.order.OrderDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.junit.Test;
 
 import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

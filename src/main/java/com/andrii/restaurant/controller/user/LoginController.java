@@ -1,9 +1,9 @@
-package com.andrii.restaurant.controller.admin;
+package com.andrii.restaurant.controller.user;
 
 import com.andrii.restaurant.controller.session.SessionHelper;
-import com.andrii.restaurant.model.Admin;
-import com.andrii.restaurant.services.adminuser.AdminUserService;
+import com.andrii.restaurant.model.User;
 import com.andrii.restaurant.services.ServiceFactory;
+import com.andrii.restaurant.services.user.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/admin/login")
-public class AdminLoginController extends HttpServlet{
-    private final AdminUserService adminUserService = ServiceFactory.getInstance().getAdminUserService();
+@WebServlet(urlPatterns = "/login")
+public class LoginController extends HttpServlet {
+
+    private final UserService userService = ServiceFactory.getInstance().getUserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/admin/admin-login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
     }
 
     @Override
@@ -26,14 +27,14 @@ public class AdminLoginController extends HttpServlet{
         String login = req.getParameter("login");
         String password = req.getParameter("psw");
 
-        Admin admin = adminUserService.findRegisteredAdmin(login, password);
-        if (admin != null) {
-            new SessionHelper(req).setCurrentAdmin(admin);
+        User user = userService.findRegisteredUser(login, password);
+        if (user != null) {
+            new SessionHelper(req).setCurrentUser(user);
 
-            resp.sendRedirect("/admin/confirmation");
+            resp.sendRedirect("/menu");
         } else {
             req.setAttribute("illegalCredentialsError", true);
-            req.getRequestDispatcher("/WEB-INF/admin/admin-login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
         }
     }
 }

@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class OrderItem {
 
-    private Dish dish;
-    private int count;
+    private final Dish dish;
+    private final int count;
 
     public OrderItem(Dish dish, int count) {
         this.dish = dish;
@@ -22,5 +22,13 @@ public class OrderItem {
 
     public BigDecimal getAmount() {
         return dish.getPrice().multiply(BigDecimal.valueOf(count));
+    }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "dish=" + dish +
+                ", count=" + count +
+                '}';
     }
 }

@@ -14,9 +14,8 @@ public class Dish {
         this.name = name;
         this.price = price;
     }
-    public Dish(){   }
-    public Dish(String name, long price) {
-        this(name, BigDecimal.valueOf(price));
+
+    public Dish() {
     }
 
     public int getId() {
@@ -56,16 +55,6 @@ public class Dish {
     }
 
     @Override
-    public String toString() {
-        return "Dish{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", photoId='" + photoId + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -83,5 +72,15 @@ public class Dish {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (photoId != null ? photoId.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", photoId='" + photoId + '\'' +
+                '}';
     }
 }

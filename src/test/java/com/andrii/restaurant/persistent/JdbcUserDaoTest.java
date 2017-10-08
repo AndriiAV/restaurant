@@ -1,6 +1,8 @@
 package com.andrii.restaurant.persistent;
 
 import com.andrii.restaurant.model.User;
+import com.andrii.restaurant.persistent.user.JdbcUserDao;
+import com.andrii.restaurant.persistent.user.UserDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.junit.Test;
 

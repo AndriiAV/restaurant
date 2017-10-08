@@ -1,5 +1,13 @@
 package com.andrii.restaurant.persistent;
 
+import com.andrii.restaurant.persistent.admin.AdminDao;
+import com.andrii.restaurant.persistent.admin.JdbcAdminDao;
+import com.andrii.restaurant.persistent.dish.DishDao;
+import com.andrii.restaurant.persistent.dish.JdbcDishDao;
+import com.andrii.restaurant.persistent.order.JdbcOrderDao;
+import com.andrii.restaurant.persistent.order.OrderDao;
+import com.andrii.restaurant.persistent.user.JdbcUserDao;
+import com.andrii.restaurant.persistent.user.UserDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 import javax.sql.DataSource;

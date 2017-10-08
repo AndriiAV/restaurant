@@ -1,10 +1,10 @@
 package com.andrii.restaurant.controller.admin;
 
-import com.andrii.restaurant.controller.SessionHelper;
+import com.andrii.restaurant.controller.session.SessionHelper;
 import com.andrii.restaurant.model.Order;
 import com.andrii.restaurant.persistent.DaoFactory;
-import com.andrii.restaurant.persistent.OrderDao;
-import com.andrii.restaurant.services.AdminService;
+import com.andrii.restaurant.persistent.order.OrderDao;
+import com.andrii.restaurant.services.admin.AdminService;
 import com.andrii.restaurant.services.ServiceFactory;
 
 import javax.servlet.ServletException;

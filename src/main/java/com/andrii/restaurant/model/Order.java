@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class Order {
+
     private Integer orderId;
     private long userId;
     private LocalDateTime orderDate;
@@ -21,9 +22,6 @@ public class Order {
     public Order setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
         return this;
-    }
-
-    public Order() {
     }
 
     public Integer getOrderId() {
@@ -74,5 +72,40 @@ public class Order {
     public Order setOrderAmount(BigDecimal orderAmount) {
         this.orderAmount = orderAmount;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        if (userId != order.userId) return false;
+        if (confirmed != order.confirmed) return false;
+        if (orderId != null ? !orderId.equals(order.orderId) : order.orderId != null) return false;
+        if (orderDate != null ? !orderDate.equals(order.orderDate) : order.orderDate != null) return false;
+        return orderAmount != null ? orderAmount.equals(order.orderAmount) : order.orderAmount == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = orderId != null ? orderId.hashCode() : 0;
+        result = 31 * result + (int) (userId ^ (userId >>> 32));
+        result = 31 * result + (orderDate != null ? orderDate.hashCode() : 0);
+        result = 31 * result + (orderAmount != null ? orderAmount.hashCode() : 0);
+        result = 31 * result + (confirmed ? 1 : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", userId=" + userId +
+                ", orderDate=" + orderDate +
+                ", orderAmount=" + orderAmount +
+                ", confirmed=" + confirmed +
+                '}';
     }
 }

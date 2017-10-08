@@ -1,10 +1,14 @@
 package com.andrii.restaurant.services;
 
 import com.andrii.restaurant.persistent.DaoFactory;
-import com.andrii.restaurant.services.impl.AdminServiceImpl;
-import com.andrii.restaurant.services.impl.AdminUserServiceImpl;
-import com.andrii.restaurant.services.impl.OrderServiceImpl;
-import com.andrii.restaurant.services.impl.UserServiceImpl;
+import com.andrii.restaurant.services.admin.AdminService;
+import com.andrii.restaurant.services.admin.AdminServiceImpl;
+import com.andrii.restaurant.services.adminuser.AdminUserService;
+import com.andrii.restaurant.services.adminuser.AdminUserServiceImpl;
+import com.andrii.restaurant.services.order.OrderServiceImpl;
+import com.andrii.restaurant.services.user.UserServiceImpl;
+import com.andrii.restaurant.services.order.OrderService;
+import com.andrii.restaurant.services.user.UserService;
 
 public class ServiceFactory {
 
